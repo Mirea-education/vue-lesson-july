@@ -1,4 +1,4 @@
-name: deploy 
+name: deploy
 
 on:
   workflow_dispatch: {}
@@ -40,7 +40,7 @@ jobs:
       - name: upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist'
+          path: ./dist
 
       - name: deploy to gitHub pages
         id: deployment
