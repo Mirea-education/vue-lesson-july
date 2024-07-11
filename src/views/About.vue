@@ -4,7 +4,7 @@ import { ChevronLeft } from 'lucide-vue-next'
 import { useFetch } from '@vueuse/core'
 import { computed } from 'vue'
 
-const { data } = useFetch('/static/about.md')
+const { data } = useFetch(`${import.meta.env.BASE_URL}static/about.md`)
 const text = computed(() => {
   return data.value && marked.parse(data.value as string)
 })
