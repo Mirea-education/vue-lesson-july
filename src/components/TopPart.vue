@@ -9,8 +9,8 @@ import { UiButton } from '@/components/ui'
     <UiButton variant="outline" @click="$router.push('/about')">
       О материале
     </UiButton>
-    <img class="img_before" src="/static/before.png">
-    <img class="img_after" src="/static/after.png">
+    <img class="img_before" src="/before.png">
+    <img class="img_after" src="/after.png">
   </div>
 </template>
 
