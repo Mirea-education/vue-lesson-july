@@ -1,1 +1,1 @@
-export * from './requests/cards'
+export * from './requests/posts'
