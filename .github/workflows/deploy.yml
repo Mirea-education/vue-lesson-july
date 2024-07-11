@@ -1,0 +1,47 @@
+name: deploy 
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: install pnpm
+        run: npm install -g pnpm
+
+      - name: install dependencies
+        run: pnpm install
+
+      - name: run linter
+        run: pnpm run lint
+
+      - name: build
+        run: pnpm build
+
+      - name: setup pages
+        uses: actions/configure-pages@v5
+
+      - name: upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+
+      - name: deploy to gitHub pages
+        id: deployment
+        uses: actions/deploy-pages@v4
