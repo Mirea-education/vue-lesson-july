@@ -8,7 +8,7 @@
   __Желаю удачного кодинга !__
 
   <div style="display: flex; align-items: center; gap: 10px">
-    <img src="https://avatars.githubusercontent.com/u/121057011?v=4" style="width: 30px; border-radius: 50%" />
+    <img src="https://avatars.githubusercontent.com/u/121057011?v=4" style="width: 30px; border-radius: 50%">
     <span style="font-size: 14px">Александр Пешков</span>
   </div>
 </div>

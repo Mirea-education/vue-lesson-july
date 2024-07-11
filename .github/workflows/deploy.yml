@@ -32,7 +32,11 @@ jobs:
         run: pnpm run lint
 
       - name: build
-        run: pnpm build
+        env:
+          NODE_ENV: production
+        run: |
+          pnpm build
+          cp -r public/* dist/
 
       - name: setup pages
         uses: actions/configure-pages@v5
